@@ -10,6 +10,7 @@ ENV WORKSPACE_VERSION=$ARG_WORKSPACE_VERSION
 
 # Install r-runtime and r-kernel
 RUN \
+    wget http://raw.githubusercontent.com/yungson/ml-workspace/main/resources/tools/r-runtime.sh -O $RESOURCES_PATH/tools/r-runtime.sh && \
     /bin/bash $RESOURCES_PATH/tools/r-runtime.sh --install && \
     # Cleanup
     clean-layer.sh
