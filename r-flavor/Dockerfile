@@ -10,6 +10,7 @@ ENV WORKSPACE_VERSION=$ARG_WORKSPACE_VERSION
 
 # Install r-runtime and r-kernel
 RUN \
+    conda config --add channels conda-forge && \
     wget http://raw.githubusercontent.com/yungson/ml-workspace/main/resources/tools/r-runtime.sh -O $RESOURCES_PATH/tools/r-runtime-4.0.sh && \
     /bin/bash $RESOURCES_PATH/tools/r-runtime-4.0.sh --install && \
     # Cleanup
